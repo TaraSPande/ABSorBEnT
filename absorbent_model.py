@@ -60,7 +60,7 @@ results.append("***ABSorBEnT Results***") #just to keep indexes consistent with 
 if __name__ == '__main__':
     absorbent_model = ABSorBEnT()
 
-    for index in range(10):
+    for index in range(120):
       print("\n " + str(index+1) + ". *************************************** \n")
       results.append(absorbent_model.answer(questions[index+1]))
       print(results[index+1])
@@ -93,10 +93,8 @@ def standardize(ans):
   ans = ans.replace(" ", "").replace("\n", "").replace("-", "")
   return ans
 
-for index in range(10):
-  if index == 0:
-    continue
-  standardized = standardize(results[index])
+for index in range(120):
+  standardized = standardize(results[index+1])
   print(standardized)
-  if standardized == answers[index].lower():
+  if standardized == answers[index+1].lower():
     print("**CORRECT**")
